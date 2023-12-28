@@ -45,8 +45,8 @@ The PokeDex prototype provides a simple REST API that allows users to view and s
 |---|---|---|
 | `/api/v1/pokeDex` | GET | Retrieves all Pokemon |
 | `/api/v1/pokeDex/:id` | GET | Retrieves a single Pokemon by ID or name |
-| `/api/v1/pokeDex/generation/` | POST | Searches for Pokemon by Generation |
-| `/api/v1/pokeDex/generation/:genID` | POST | Searches for Pokemon by generation number |
+| `/api/v1/pokeDex/generation/` | GET | Searches for Pokemon by Generation |
+| `/api/v1/pokeDex/generation/:genID` | GET | Searches for Pokemon by generation number |
 
 To use the API, you can send HTTP requests to the specified endpoints. For example, the following cURL command will retrieve all Pokemon:
 
