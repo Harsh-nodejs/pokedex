@@ -92,3 +92,24 @@ Result in api -> JSON format =>
     }
 }
 
+
+# Page GUI
+
+To see some pages
+
+The following URL command :
+
+```
+ http://localhost:3000/
+```
+![image](https://github.com/Harsh-nodejs/pokedex/assets/153886419/a5147019-8ec0-45c2-bf62-8edeea543639)
+
+
+
+The following URL command will retrieve All Pokemon:
+
+```
+ http://localhost:3000/page/v1/pokeDex
+```
+![image](https://github.com/Harsh-nodejs/pokedex/assets/153886419/30e31063-a2b3-4b77-9955-2439cc87060e)
+
