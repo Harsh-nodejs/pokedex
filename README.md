@@ -114,3 +114,14 @@ The following URL command will retrieve All Pokemon:
 ```
 ![image](https://github.com/Harsh-nodejs/pokedex/assets/153886419/30e31063-a2b3-4b77-9955-2439cc87060e)
 
+Get by Generation
+
+![image](https://github.com/Harsh-nodejs/pokedex/assets/153886419/f6cec152-a6d8-4d38-98ec-f1e8ac07ef62)
+
+```
+http://localhost:3000/page/v1/pokeDex/generation/2
+```
+![image](https://github.com/Harsh-nodejs/pokedex/assets/153886419/f50dba11-b442-4faa-8148-69be847b8e5e)
+
+
+> **Author**: Harsh Parashar
