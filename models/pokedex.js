@@ -14,20 +14,21 @@ const pokeSchema = mongoose.Schema({
   special_defense: Number,
   speed: Number,
   generation: Number,
+  legendary: Boolean,
+  mythical: Boolean,
 });
 
-pokeSchema.pre(/^find/, function(next) {
+pokeSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } });
 
   this.start = Date.now();
   next();
 });
 
-pokeSchema.post(/^find/, function(docs, next) {
+pokeSchema.post(/^find/, function (docs, next) {
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
   next();
 });
-
 
 const Pokedex = mongoose.model('pokedex', pokeSchema);
 

@@ -19,13 +19,14 @@ app.use((req, res, next) => {
 });
 
 // base page
-const data = fs.readFileSync('./public/HTML/index.html', 'utf-8');
-const nav = fs.readFileSync('./public/HTML/nav.html', 'utf-8');
-const outNav = data.replace('{%SECTION%}', nav);
+let data = '';
+fs.readFile('./public/HTML/index.html', 'utf-8', (err, rdata) => {
+  data = rdata;
+});
 
 // Routes
 app.get('/', (req, res) => {
-  res.status(200).send(outNav);
+  res.status(200).send(data.replace('{%SECTION%}',''));
 }); // Base Route
 
 app.use('/api/v1/pokeDex', pokeRouter); // API Route
