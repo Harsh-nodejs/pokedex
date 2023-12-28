@@ -54,20 +54,17 @@ To use the API, you can send HTTP requests to the specified endpoints. For examp
 curl http://localhost:3000/
 ```
 
-The following cURL command will retrieve a single Pokemon by ID:
+The following URL command will retrieve a single Pokemon by ID:
 
 ```
-curl http://localhost:3000/api/v1/pokeDex/1
+ http://localhost:3000/api/v1/pokeDex/1
 ```
 
-The following cURL command will search for Pokemon by name:
 
 ```
-curl -X POST
+Result in api -> JSON format =>
 
-Result in api format =>
-
->{
+{
     "status": "success",
     "results": 1,
     "data": {
@@ -94,3 +91,4 @@ Result in api format =>
         ]
     }
 }
+
