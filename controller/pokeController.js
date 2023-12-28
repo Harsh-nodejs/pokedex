@@ -1,13 +1,20 @@
+const _ = require('lodash');
 const Pokedex = require('../models/pokedex');
 const APIFeatures = require('../utils/apiFeatures');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
-exports.getAll = async (req, res, next) => {
+exports.getAll = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Pokedex.find(), req.query)
     .filter()
     .sort()
     .limitFields()
     .paginate();
   const pokedex = await features.query;
+
+  if (_.isEmpty(pokedex)) {
+    return next(new AppError('No Pokemon found with that ID', 404));
+  }
 
   // SEND RESPONSE
   res.status(200).json({
@@ -17,10 +24,15 @@ exports.getAll = async (req, res, next) => {
       pokedex,
     },
   });
-};
+});
 
 // Get pokemon by generations
-exports.getGeneration = async (req, res) => {
+exports.getGeneration = catchAsync(async (req, res, next) => {
+  // Checking for empty Generation value
+  if (!req.params.genId) {
+    return this.getAll(req, res);
+  }
+
   const features = new APIFeatures(
     Pokedex.find({ generation: req.params.genId }),
     req.query,
@@ -31,6 +43,10 @@ exports.getGeneration = async (req, res) => {
     .paginate();
   const pokedex = await features.query;
 
+  if (_.isEmpty(pokedex)) {
+    return next(new AppError('No Pokemon found with that ID', 404));
+  }
+
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
@@ -39,9 +55,9 @@ exports.getGeneration = async (req, res) => {
       pokedex,
     },
   });
-};
+});
 
-exports.getOne = async (req, res, next) => {
+exports.getOne = catchAsync(async (req, res, next) => {
   // check ID for number or Name
   let param = req.params.Id;
   let queryst = '';
@@ -58,6 +74,7 @@ exports.getOne = async (req, res, next) => {
 
   queryst = JSON.parse(queryst);
   // console.log(queryst);
+
   // Querying
   const features = new APIFeatures(Pokedex.find(queryst), req.query)
     .filter()
@@ -66,6 +83,10 @@ exports.getOne = async (req, res, next) => {
     .paginate();
   const pokedex = await features.query;
 
+  if (_.isEmpty(pokedex)) {
+    return next(new AppError('No Pokemon found with that ID', 404));
+  }
+
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
@@ -74,9 +95,9 @@ exports.getOne = async (req, res, next) => {
       pokedex,
     },
   });
-};
+});
 
-exports.getLegendary = async (req, res) => {
+exports.getLegendary = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Pokedex.find({ legendary: true }), req.query)
     .filter()
     .sort()
@@ -84,6 +105,10 @@ exports.getLegendary = async (req, res) => {
     .paginate();
   const pokedex = await features.query;
 
+  if (_.isEmpty(pokedex)) {
+    return next(new AppError('No Pokemon found with that ID', 404));
+  }
+
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
@@ -92,16 +117,19 @@ exports.getLegendary = async (req, res) => {
       pokedex,
     },
   });
-};
+});
 
-exports.getMythical = async (req, res) => {
-  const features = new APIFeatures(Pokedex.find({ mythical : true }), req.query)
+exports.getMythical = catchAsync(async (req, res, next) => {
+  const features = new APIFeatures(Pokedex.find({ mythical: true }), req.query)
     .filter()
     .sort()
     .limitFields()
     .paginate();
   const pokedex = await features.query;
 
+  if (_.isEmpty(pokedex)) {
+    return next(new AppError('No Pokemon found with that ID', 404));
+  }
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
@@ -110,4 +138,4 @@ exports.getMythical = async (req, res) => {
       pokedex,
     },
   });
-};
+});
