@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+
     <title>POKEDEX</title>
   </head>
   <body class="overflow-x-hidden">
     <!-- component -->
     <!-- follow me on twitter @asad_codes -->
 
-    <div class="flex flex-wrap place-items-center">
+    <div class="flex flex-wrap place-items-center z-10">
       <section class="relative mx-auto">
         <!-- navbar -->
         <nav class="flex justify-between bg-gray-900 text-white w-screen">
@@ -38,75 +43,104 @@
                 >
               </li>
               <li>
-                <a
-                  class="hover:text-gray-200"
-                  href="/page/v1/pokeDex/generation/"
-                  >Get Generation</a
+                <button
+                  id="dropdownDefaultButton"
+                  data-dropdown-toggle="dropdown"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  type="button"
                 >
+                  Generations
+                  <svg
+                    class="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdown"
+                  class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700"
+                >
+                <center>
+                  <ul
+                    class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownDefaultButton"
+                  >
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/1"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 1</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/2"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/3"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 3</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/4"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 4</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/5"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 5</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/6"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 6</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/7"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 7</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/page/v1/pokeDex/generation/8"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >Generation 8</a
+                      >
+                    </li>
+                  </ul>
+                </center>
+                </div>
               </li>
               <li><a class="hover:text-gray-200" href="#">Contact Us</a></li>
             </ul>
+
             <!-- Header Icons -->
-            <div class="hidden xl:flex items-center space-x-5 items-center">
-              <a class="hover:text-gray-200" href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
-                </svg>
-              </a>
-              <a class="flex items-center hover:text-gray-200" href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                <span class="flex absolute -mt-5 ml-4">
-                  <span
-                    class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"
-                  ></span>
-                  <span
-                    class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"
-                  >
-                  </span>
-                </span>
-              </a>
-              <!-- Sign In / Register      -->
-              <a class="flex items-center hover:text-gray-200" href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 hover:text-gray-200"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </a>
-            </div>
           </div>
           <!-- Responsive navbar -->
           <a class="xl:hidden flex mr-6 items-center" href="#">
@@ -155,5 +189,8 @@
     </div>
 
     <section class="m-1">{%SECTION%}</section>
+    <div></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   </body>
 </html>

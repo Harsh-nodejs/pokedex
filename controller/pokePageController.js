@@ -9,7 +9,7 @@ const AppError = require('../utils/appError');
 // const tab = fs.readFileSync('./public/HTML/dataTable.html', 'utf-8');
 // const outTab = data.replace('{%SECTION%}',tab);
 
-let getPage = async (pokedex) => {
+const getPage = async (pokedex) => {
   // Getting Page
   const data = () =>
     new Promise((resolve, rej) => {
@@ -65,8 +65,6 @@ let getPage = async (pokedex) => {
   return outTab;
 };
 
-
-
 exports.getAll = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Pokedex.find(), req.query)
     .filter()
@@ -80,12 +78,11 @@ exports.getAll = catchAsync(async (req, res, next) => {
   }
 
   // getting page
-  const outTab = await getPage(pokedex)
+  const outTab = await getPage(pokedex);
 
   // SEND RESPONSE
   res.status(200).send(outTab);
 });
-
 
 exports.getGeneration = catchAsync(async (req, res, next) => {
   // Checking for empty Generation value
@@ -108,11 +105,8 @@ exports.getGeneration = catchAsync(async (req, res, next) => {
   }
 
   // getting Page
-  const outTab = await getPage(pokedex)
-
+  const outTab = await getPage(pokedex);
 
   // SEND RESPONSE
   res.status(200).send(outTab);
-
 });
-
