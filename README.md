@@ -91,7 +91,7 @@ Result in api -> JSON format =>
         ]
     }
 }
-
+```
 
 # Page GUI
 
@@ -102,6 +102,7 @@ The following URL command :
 ```
  http://localhost:3000/
 ```
+
 ![image](https://github.com/Harsh-nodejs/pokedex/assets/153886419/a5147019-8ec0-45c2-bf62-8edeea543639)
 
 
