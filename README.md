@@ -8,7 +8,7 @@ The PokeDex prototype is a simple Node.js application that allows users to view 
 To install the PokeDex prototype, you will need to have Node.js and npm installed on your system. Once you have installed Node.js and npm, you can clone the PokeDex prototype repository from GitHub:
 
 ```
-git clone https://github.com/harshparashar/pokedex-prototype.git
+[git clone https://github.com/harshparashar/pokedex-prototype.git] (https://github.com/Harsh-nodejs/pokedex.git)
 ```
 
 Once you have cloned the repository, you can install the project's dependencies by running the following command in the project's root directory:
